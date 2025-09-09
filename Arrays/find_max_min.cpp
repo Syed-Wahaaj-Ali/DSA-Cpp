@@ -2,24 +2,25 @@
 using namespace std;
 
 int main() {
-    int arr[] = {10, 25, 3, 56, 7, 99, 18};
-    int n = 7;
+    int n;
+    cout << "Enter size of array: ";
+    cin >> n;
 
-    int maxNum = arr[0];
-    int minNum = arr[0];
-
-    // check each element
-    for (int i = 1; i < n; i++) {
-        if (arr[i] > maxNum) {
-            maxNum = arr[i];
-        }
-        if (arr[i] < minNum) {
-            minNum = arr[i];
-        }
+    int arr[n];
+    cout << "Enter " << n << " elements: ";
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
     }
 
-    cout << "Maximum value: " << maxNum << endl;
-    cout << "Minimum value: " << minNum << endl;
+    int maxVal = arr[0], minVal = arr[0];
+
+    for (int i = 1; i < n; i++) {
+        if (arr[i] > maxVal) maxVal = arr[i];
+        if (arr[i] < minVal) minVal = arr[i];
+    }
+
+    cout << "Maximum element: " << maxVal << endl;
+    cout << "Minimum element: " << minVal << endl;
 
     return 0;
 }
