@@ -2,28 +2,26 @@
 using namespace std;
 
 int main() {
-    int arr[] = {1, 2, 3, 4, 5};
-    int n = 5;
+    int n, k;
+    cout << "Enter size of array: ";
+    cin >> n;
 
-    cout << "Original array: ";
-    for (int i = 0; i<n; i++) {
-        cout << arr[i] << " ";
-    }
-    cout << endl;
-
-    // store last element
-    int last = arr[n-1];
-
-    // shift elements to the right
-    for (int i = n-1; i>0; i--) {
-        arr[i] = arr[i-1];
+    int arr[n];
+    cout << "Enter " << n << " elements: ";
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
     }
 
-    // put last element at first position
-    arr[0] = last;
+    cout << "Enter number of positions to rotate (k): ";
+    cin >> k;
+
+    k = k % n; // handle if k > n
 
     cout << "Array after rotation: ";
-    for (int i = 0; i<n; i++) {
+    for (int i = k; i < n; i++) {
+        cout << arr[i] << " ";
+    }
+    for (int i = 0; i < k; i++) {
         cout << arr[i] << " ";
     }
     cout << endl;
