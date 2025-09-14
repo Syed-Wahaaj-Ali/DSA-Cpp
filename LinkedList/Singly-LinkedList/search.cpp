@@ -73,8 +73,8 @@ int main() {
 
     if (search(head, key))
         cout << key << " found in the list.\n";
-    else
+    else {
         cout << key << " not found in the list.\n";
-
+    }
     return 0;
 }
